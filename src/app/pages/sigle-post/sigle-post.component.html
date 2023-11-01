@@ -1,0 +1,28 @@
+<div class="bgColor p-14">
+    <div class="w-4/5 mx-auto">
+        <p class="heading text-white uppercase text-2xl font-bold">{{postCategory}}</p>
+        <p class=" text-white text-sm pt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae nobis beatae atque doloribus, quasi dolorum nihil, corrupti, quas </p>        
+    </div>
+</div>
+
+<div class=" mx-auto flex flex-wrap gap-6 mt-8 w-3/5">           
+    
+    <div class="  " *ngFor="let post of posts">
+        <div class="w-80 heightProp cursor-pointer " [routerLink]="['/category', post.id]">
+            <img src="{{post.data.image}}" alt="" class="overflow-hidden  imgCard w-80 ">
+            <div class="flex gap-4 p-3 bg-white">
+                <p class="text-red-600 text-md ">{{post.data.categorys.category}}</p>
+                <p class="text-blue-600 text-md ">{{post.data.isFeatured}}</p>
+                <p class="text-green-600 text-md ">Views  - {{post.data.views}}</p>                          
+            </div> 
+            <div class="bg-white p-3  imgCard">
+            <p class="uppercase font-bold ">{{post.data.title }}</p>
+            <p class=" mt-2 ml-2 w-full h-24 overflow-hidden">{{post.data.excerpt}}</p>
+            <p class="uppercase text-orange-400 text-xs mt-3 ml-4">Last updated {{post.data.createdAt.toMillis() | date}}</p>  
+        </div>
+        </div>            
+        </div>   
+     
+   
+        
+</div>

@@ -1,0 +1,8 @@
+<nav [ngStyle]="navstyle" class="mt-28 fixed top-0 navbarBg flex h-12 justify-center items-center w-full">
+
+    <div    class="flex gap-4 items-center text-lg" [ngStyle]="navBg">
+        <ul   *ngFor="let header of categoryResult">
+          <a [routerLink]="['/post', header.data.category, header.id]" >{{header.data.category}}</a>           
+        </ul>
+    </div>
+</nav>

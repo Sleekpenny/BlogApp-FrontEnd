@@ -1,0 +1,18 @@
+.feature{
+    background-color: var(--primary-color);
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-bottom: 130px;
+   
+}
+
+.imgCard{
+    height: 250px;  
+   
+}
+
+
+.width{
+    width:30rem
+}
+

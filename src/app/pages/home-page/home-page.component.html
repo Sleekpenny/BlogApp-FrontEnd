@@ -1,0 +1,52 @@
+<div class="feature p-28 mx-auto">
+    <div class="text-center pt-8 w-full p-2 ">
+        <p class=" text-white uppercase text-4xl font-bold w-full">Featured posts</p>
+        <p class=" text-white text-lg p-2 w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt atque at  </p>
+    </div>
+
+    <div class="PostWrapper flex  gap-10  justify-center mt-8">
+        
+            <div class="max-w-sm box-Prop " *ngFor="let post of postResults" >
+                <div class="w-96 heightProp cursor-pointer" [routerLink]="['/category', post.id]">
+                    <img src="{{post.data.image}}" alt="" class="overflow-hidden  imgCard w-96">
+                    <div class="flex gap-4 p-3 bg-white">
+                        <p class="text-red-600 text-md ">{{post.data.categorys.category}}</p>
+                        <p class="text-blue-600 text-md ">{{post.data.isFeatured}}</p>
+                        <p class="text-green-600 text-md ">Views  - {{post.data.views}}</p>                          
+                    </div>
+                    <div class="bg-white p-3  imgCard ">
+                    <p class="uppercase font-bold ">{{post.data.title }}</p>
+                    <p class=" mt-2 ml-2 w-full h-24 overflow-hidden">{{post.data.excerpt}}</p>
+                    <p class="uppercase text-orange-400 text-xs mt-3 ml-4">Last updated {{post.data.createdAt.toMillis() | date}}</p>  
+                </div>
+                </div>            
+                </div>    
+    </div>
+</div>
+
+<div class="latestSection mt-8">
+    <div class="w-full text-center">
+        <p class="font-bold text-lg uppercase">Latest Posts</p>
+        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ab optio id doloribus quaerat libero quo, sit voluptatem veniam </p>
+    </div>
+
+    <div class=" mx-auto flex flex-wrap gap-6 mt-8 w-3/5 justify-center items-center">    
+
+        <div class=" max-w-sm box-Prop " *ngFor="let post of lastestPost" [routerLink]="['/category', post.id]">
+            <div class="w-80 heightProp cursor-pointer" >
+                <img src="{{post.data.image}}" alt="" class="overflow-hidden  imgCard w-80 ">
+                <div class="flex gap-4 p-3 bg-white">
+                    <p class="text-red-600 text-md ">{{post.data.categorys.category}}</p>
+                    <p class="text-blue-600 text-md ">{{post.data.isFeatured}}</p>
+                    <p class="text-green-600 text-md ">Views  - {{post.data.views}}</p>                          
+                </div> 
+                <div class="bg-white p-3  imgCard">
+                <p class="uppercase font-bold ">{{post.data.title }}</p>
+                <p class=" mt-2 ml-2 w-full h-24 overflow-hidden">{{post.data.excerpt}}</p>
+                <p class="uppercase text-orange-400 text-xs mt-3 ml-4">Last updated {{post.data.createdAt.toMillis() | date}}</p>  
+            </div>
+            </div>            
+            </div>   
+
+    </div>
+</div>

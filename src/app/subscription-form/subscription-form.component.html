@@ -1,0 +1,47 @@
+<div class="ml-4 mt-8 subWrapper box-Prop p-8">
+    <div class=" w-full text-center ">
+        <p class="text-4xl uppercase font-bold  ">Subscription form</p>
+        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, similique!</p>
+    </div>
+
+    <div class="w-full text-center p-3 butColor text-white text-lg" *ngIf="usedEmail"> Thanks for subscribing to our Newsletter</div>
+
+        <div class="w-full ">
+        <form #form="ngForm" (submit)="onSubmit(form)" class="px-20 pt-6 flex w-full gap-4 justify-between items-center" >
+
+            <div class="w-full">
+            <input 
+            type="text" 
+            placeholder="Your Name" 
+            name="name" 
+            class="outline-none p-3 px-4 w-full box-Prop" 
+            ngModel
+            required
+            #name='ngModel'>
+            
+            <div *ngIf="name.touched && name.invalid">
+                <p *ngIf="name.errors?.['required']" class=" bg-orange-300 text-center text-white px-2">What's your name</p>
+            </div>
+            </div>
+
+            <div class="w-full">
+            <input 
+            type="email" 
+            placeholder="Your Email" 
+            name="email" 
+            class="outline-none p-3 px-4 w-full box-Prop" 
+            ngModel
+            email 
+            required
+            #email="ngModel">
+
+            <div *ngIf="email.touched && email.invalid">
+                <p *ngIf="email.errors?.['required']" class=" bg-orange-300 text-center text-white px-2">What's your name</p>
+                <p *ngIf="email.errors?.['email']" class=" bg-orange-300 text-center text-white px-2">Wrong email address</p>
+            </div>
+        </div>
+
+            <button class="butColor text-white uppercase  p-3 box-Prop" [disabled]="form.invalid">subscribe</button>
+        </form>
+    </div>
+</div>

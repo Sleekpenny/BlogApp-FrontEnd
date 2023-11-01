@@ -1,0 +1,7 @@
+.subWrapper{
+    background-color: var(--secondary-color);
+}
+
+.butColor{
+    background-color: var(--primary-color);
+}

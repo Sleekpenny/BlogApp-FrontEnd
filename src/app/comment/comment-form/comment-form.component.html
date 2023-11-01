@@ -1,0 +1,14 @@
+<div class="w-full ">
+    <p class="text-green-800 font-bold text-lg mb-1">Leave a comment</p>
+    <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id </p>
+
+    <form #form="ngForm" (submit)="onSubmit(form)" >
+        <label class="text-sm"> Name</label>
+        <input type="text" class="bg-gray-600  text-white w-full p-3 box-Prop outline-none mb-4" placeholder="What's your name?"  name="Username" ngModel>
+
+        <label class="text-sm mb-2"> Comment</label>
+        <textarea name="commentSection" placeholder="Add your comment here"  cols="30" rows="10" class="w-full p-3 box-Prop outline-none bg-gray-600 text-white" ngModel></textarea>
+
+        <button class="bgComment text-white uppercase  p-3 box-Prop username mt-4">Add comment</button>
+    </form>
+</div>

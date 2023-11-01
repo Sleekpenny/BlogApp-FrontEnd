@@ -1,0 +1,51 @@
+<div class="flex ">
+
+    <div class=" max-w-5xl mt-8  ml-44">
+        <img src="{{post.image}}" alt="" class="w-full imageProp">
+        <div class="flex gap-4 items-center p-4">
+            <p class="text-lg  text-red-600">Design</p>
+            <p class="text-lg text-blue-600">{{post.isFeatured}}</p>
+            <p class="text-lg text-green -600">Views - {{post.views}}</p>
+            <p class="text-sm text-red-600 uppercase">Last updated {{post.createdAt.toMillis() | date}}</p>
+        </div>
+
+        <div class="w-full  box-Prop p-4"> 
+            <p class="uppercase font-bold text-4xl ">{{post.title}}</p>
+            <p class="text-lg mt-4 text-justify" [innerHtml]="post.content"></p>
+        </div>
+
+        <div class="mt-8 p-4 box-Prop">
+            <app-comment-form></app-comment-form>
+        </div>
+
+        <div class="mt-8 box-Prop">
+            <app-comment-list></app-comment-list>
+        </div>
+    </div>  
+
+    <div class=" mt-8 ml-4">           
+        <div class="flex-col flex gap-4">
+
+            <div class=" max-w-sm box-Prop " *ngFor="let post of similarPost" [routerLink]="['/category', post.id]">
+                <div class="w-80 heightProp cursor-pointer" >
+                    <img src="{{post.data.image}}" alt="" class="overflow-hidden  imgCardPop w-80 ">
+                    <div class="flex gap-4 p-3 bg-white">
+                        <p class="text-red-600 text-md ">{{post.data.categorys.category}}</p>
+                        <p class="text-blue-600 text-md ">{{post.data.isFeatured}}</p>
+                        <p class="text-green-600 text-md ">Views  - {{post.data.views}}</p>                          
+                    </div> 
+                    <div class="bg-white p-3  imgCard">
+                    <p class="uppercase font-bold ">{{post.data.title }}</p>
+                    <p class=" mt-2 ml-2 w-full h-24 overflow-hidden">{{post.data.excerpt}}</p>
+                    <p class="uppercase text-orange-400 text-xs mt-3 ml-4">Last updated {{post.data.createdAt.toMillis() | date}}</p>  
+                </div>
+                </div>            
+                </div> 
+
+        </div>    
+    </div>
+
+</div>
+
+
+

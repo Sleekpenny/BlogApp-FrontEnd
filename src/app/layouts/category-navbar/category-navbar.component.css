@@ -1,0 +1,7 @@
+.navbarBg{
+    background-color: var(--navbar-footer-color);
+}
+
+.navbarBg li {
+    color: var(--primary-color)
+}

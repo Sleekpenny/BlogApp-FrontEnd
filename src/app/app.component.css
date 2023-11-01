@@ -1,0 +1,9 @@
+.transition{
+    transition:all 0.2ms ease-in-out
+}
+
+.app-body{
+    min-height: 35vh;
+    margin: 150px ;
+
+}
